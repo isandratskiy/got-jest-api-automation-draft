@@ -14,6 +14,8 @@ jobs:
 
       - name: Set Up Swagger Petstore - OpenAPI 3.0
         run: |
-         docker pull swaggerapi/petstore3:unstable
-         docker run  --name swaggerapi-petstore3 -d -p 8080:8080 swaggerapi/petstore3:unstable
-         docker ps
+          docker pull swaggerapi/petstore3:unstable
+          docker run  --name swaggerapi-petstore3 -d -p 8080:8080 swaggerapi/petstore3:unstable
+
+      - name: Run API Integrations tests
+        run: npm cit
