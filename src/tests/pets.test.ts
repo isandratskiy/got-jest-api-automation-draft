@@ -1,5 +1,6 @@
 import {PetController} from '../api/controller/pet.controller'
 import {components} from "../types/petstore.types";
+import {strict as assert} from 'assert'
 
 describe('Pet controller', () => {
 	it('user can add a new pet', async () => {
@@ -21,5 +22,6 @@ describe('Pet controller', () => {
 		}
 
 		const addedPet = await new PetController().add(pet)
+		assert.equal(addedPet.id, pet.id)
 	})
 })
